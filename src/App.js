@@ -10,7 +10,7 @@ import SpaceShooter from './components/PhaserComponents/SpaceShooterScenes/index
 import PunkDude from './components/PhaserComponents/DudeScenes/index.jsx';
 import GuessTheAnimal from './components/ReactComponents/GuessTheAnimal/Start.jsx';
 import SpacePad from './components/ReactComponents/SpacePad/App.jsx';
-import Comparator from './components/ReactComponents/ComparadorDePrecios/index.jsx';
+import Comparator from './components/ReactComponents/PriceComparator/index.jsx';
 
 function App() {
   return (

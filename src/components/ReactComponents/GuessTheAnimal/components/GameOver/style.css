@@ -1,0 +1,19 @@
+.game-over-container {
+    font-size: 2rem;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-inline: auto;
+    color: #d8f3dc;
+}
+
+.game-over-container > .subtitle{
+    font-size: 5rem;
+}
+
+.higher-score {
+    font-size: 3rem;
+}

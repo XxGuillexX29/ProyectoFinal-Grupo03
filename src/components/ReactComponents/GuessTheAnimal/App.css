@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
+
+body {
+    padding: 2rem;
+    height: 100vh;
+    width: 100%;
+    background-color: #081c15;
+    color: #52b788;
+}
+
+#title-game {
+    width: max-content;
+    margin-inline: auto;
+    text-align: center;
+    background-color: #1b4332;
+    color: #d8f3dc;
+    font-size: 3rem;
+    padding: .5rem 1.5rem;
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+
+.subtitle {
+
+    color: #d8f3dc;
+}
+
+.start-container {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.play-button {
+    width: 80% !important;
+    font-size: 5rem !important;
+    padding: 2rem !important;
+    margin-inline: auto;
+}
+
+.start-button {
+    width: 50% !important;
+    font-size: 3rem !important;
+    padding: 1rem !important;
+    margin-inline: auto;
+    animation: breathing .8s infinite;
+}
+
+.start-button:disabled {
+    background-color: #52b788;
+    color: #52b788;
+    border: none;
+    animation: none;
+}
+
+.start-button:disabled:hover {
+    background-color: #52b788;
+    color: #52b788;
+    border: none;
+}
+
+.button {
+    font-size: 2rem;
+    padding: 1rem;
+    border: 3px solid #52b788;
+    border-radius: 20px;
+    color: #d8f3dc;
+    background-color: #52b788;
+    text-transform: uppercase;
+    font-weight: bolder;
+    transition: ease .2s;
+}
+
+.button:hover {
+    border: 3px solid #d8f3dc;
+    color: #d8f3dc;
+    background-color: #52b788;
+    scale: 1.05;
+}
+
+.button:active {
+    background-color: #1b4332;
+}
+
+.subtitle {
+    font-size: 3rem;
+}
+
+.animal-img {
+    animation: breathing 5s infinite;
+}
+
+.next-round>button,
+.play-button {
+    animation: breathing .8s infinite;
+}
+
+.player-turn {
+    animation: breathing2 .8s infinite;
+}
+
+@keyframes breathing {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes breathing2 {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+        color: #52b788;
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

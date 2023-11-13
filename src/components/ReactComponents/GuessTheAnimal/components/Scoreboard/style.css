@@ -1,0 +1,13 @@
+.score-container {
+    position: absolute;
+    top: 5rem;
+    left: 4rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.score-player {
+    list-style: none;
+    margin: 1rem;
+    color: #d8f3dc;
+}

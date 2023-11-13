@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.App {
+  text-align: center;
+  background-color: #1b1e31;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  min-height: 100vh;
+}
+
+button {
+  font-size: 1.2rem;
+  padding: .5rem;
+  margin: .5rem;
+  text-transform: uppercase;
+  color: #F9F9F9;
+  background-color: #272942;
+  border: 3px solid #584bcf;
+  border-radius: 5px;
+  transition: ease .3s;
+  font-weight: bold;
+}
+
+button:hover {
+  scale: 1.1;
+  border: 3px solid rgb(248, 211, 47);
+}
+
+.input:focus {
+  outline: 5px solid #584bcf;
+}

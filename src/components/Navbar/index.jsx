@@ -28,7 +28,7 @@ export default function Navbar() {
                     <Link to="/spacePad">Space Pad</Link>
                 </li>
                 <li>
-                    <Link to="/calculadora">Calculadora</Link>
+                    <Link to="/calculadora">Comparador</Link>
                 </li>
                 <li>
                     <Link to="/about">About Us</Link>

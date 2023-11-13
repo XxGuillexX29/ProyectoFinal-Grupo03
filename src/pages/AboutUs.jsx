@@ -1,6 +1,8 @@
 const AboutUs = () => {
     return (
-        <div>About us</div>
+        <div>
+            <h2>About us</h2>
+        </div>
     );
 };
 

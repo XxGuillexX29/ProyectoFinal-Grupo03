@@ -13,7 +13,6 @@ const iniciarEscena = () => Escenas.map(createScene);
 
 const Dude = () => {
     useEffect(() => {
-        console.log('useEffect ejecutado');
         const config = {
             type: Phaser.AUTO,
             width: 1200,

@@ -10,7 +10,7 @@ import SpaceShooter from './components/PhaserComponents/SpaceShooterScenes/index
 import PunkDude from './components/PhaserComponents/DudeScenes/index.jsx';
 import GuessTheAnimal from './components/ReactComponents/GuessTheAnimal/Start.jsx';
 import SpacePad from './components/ReactComponents/SpacePad/App.jsx';
-import Calculadora from './components/ReactComponents/CalculadoraDePorcentajes/index.jsx';
+import Comparator from './components/ReactComponents/ComparadorDePrecios/index.jsx';
 
 function App() {
   return (
@@ -23,8 +23,8 @@ function App() {
         <Route path="/spaceShooter" element={<SpaceShooter />} />
         <Route path="/punkDude" element={<PunkDude />} />
         <Route path="/guessGame" element={<GuessTheAnimal />} />
-        <Route path="/SpacePad" element={<SpacePad />} />
-        <Route path="/calculadora" element={<Calculadora />} />
+        <Route path="/spacePad" element={<SpacePad />} />
+        <Route path="/comparator" element={<Comparator />} />
         <Route path="/apps" element={<Apps />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>

@@ -1,0 +1,11 @@
+.card-container {
+    background-color: antiquewhite;
+    width: 400px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+    border-radius: 25px;
+}

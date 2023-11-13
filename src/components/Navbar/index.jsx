@@ -1,39 +1,26 @@
 import './style.css';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
-export default function Navbar() {
+const Navbar = () => {
     return (
         <nav className='nav-container'>
             <h1 className="title">GRUPO 3</h1>
             <ul className='nav-list'>
                 <li>
-                    <Link to="/">Home</Link>
+                    <NavLink to={'/'} activeClassName='active-link'>Home</NavLink>
                 </li>
                 <li>
-                    <Link to="/games">Games</Link>
+                    <NavLink to={'/games'} activeClassName='active-link'>Games</NavLink>
                 </li>
                 <li>
-                    <Link to="/spaceShooter">Blue Hope</Link>
+                    <NavLink to={'/apps'} activeClassName='active-link'>Apps</NavLink>
                 </li>
                 <li>
-                    <Link to="/punkDude">Punk Dude</Link>
-                </li>
-                <li>
-                    <Link to="/apps">Apps</Link>
-                </li>
-                <li>
-                    <Link to="/guessGame">GTA</Link>
-                </li>
-                <li>
-                    <Link to="/spacePad">Space Pad</Link>
-                </li>
-                <li>
-                    <Link to="/calculadora">Calculadora</Link>
-                </li>
-                <li>
-                    <Link to="/about">About Us</Link>
+                    <NavLink to={'/about'} activeClassName='active-link'>About us</NavLink>
                 </li>
             </ul>
         </nav>
     );
-}
+};
+
+export default Navbar;

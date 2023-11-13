@@ -10,20 +10,26 @@ import animalsData from "../../data/animals.json";
 let maxRounds = Math.floor(Math.random() * (10 - 5 + 1) + 5);
 
 function Game() {
-    const [players, setPlayers] = useState([]); // State to store player names.
-    const [currentPlayerIndex, setCurrentPlayerIndex] = useState(0); // Index of the current player.
-    const [score, setScore] = useState({}); // State to store player scores.
-    const [roundsPlayed, setRoundsPlayed] = useState(0); // Number of rounds played.
-    const [currentAnimal, setCurrentAnimal] = useState(null); // The current animal to be guessed.
-    const [shuffledOptions, setShuffledOptions] = useState([]); // Shuffled answer options for the current animal.
-
+    const [players, setPlayers] = useState([]);
+    const [currentPlayerIndex, setCurrentPlayerIndex] = useState(0);
+    const [roundsPlayed, setRoundsPlayed] = useState(0);
+    const [currentAnimal, setCurrentAnimal] = useState(null);
+    const [shuffledOptions, setShuffledOptions] = useState([]);
     const [showResult, setShowResult] = useState(false);
     const [resultText, setResultText] = useState("");
     const [buttonsDisabled, setButtonsDisabled] = useState(false);
+    const [showWildcard, setShowWildcard] = useState(true);
+    // Game state object to store scores, wildcard usage, and eliminated option.
+    const [gameState, setGameState] = useState({
+        score: {},
+        wildcardUsed: {},
+        eliminatedOption: null,
+    });
 
-    let totalRounds = maxRounds * 2; // Equal number of rounds for the two players
+    // Equal number of rounds for the two players.
+    let totalRounds = maxRounds * 2;
 
-    // Generate new rounds until the total rounds reaches 0
+    // Generate new rounds until the total rounds reach 0.
     useEffect(() => {
         if (roundsPlayed < totalRounds) {
             generateNewRound();
@@ -32,64 +38,95 @@ function Game() {
 
     // Generate a new round of the game.
     const generateNewRound = () => {
-        let correctAnimal = getRandomAnimal();
-        let randomOptions = [correctAnimal];
-
-        while (randomOptions.length < 3) {
-            const opcion = getRandomAnimal();
-            if (!randomOptions.includes(opcion)) {
-                randomOptions.push(opcion);
-            }
-        }
-
+        const correctAnimal = getRandomAnimal();
+        const options = createOptions(correctAnimal);
         setCurrentAnimal(correctAnimal);
-        setShuffledOptions([...randomOptions].sort(() => Math.random() - 0.5));
+        setShuffledOptions([...options].sort(() => Math.random() - 0.5));
+        setGameState((prevGameState) => ({
+            ...prevGameState,
+            eliminatedOption: null,
+        }));
+        setShowWildcard(true);
     };
 
-    // Choose a random animal.
-    const getRandomAnimal = () => {
-        let animals = animalsData;
-        const randomIndex = Math.floor(Math.random() * animals.length);
-        return animals[randomIndex];
-    }
-
-    // Handle the player's guess.
-    const handleGuess = (guess) => {
-        let currentScore = score[players[currentPlayerIndex]] || 0;
-        let isCorrect = false;
-
-        if (guess.toLowerCase() === currentAnimal.nameEn.toLowerCase()) {
-            currentScore += 1;
-            isCorrect = true;
+    // Create options for the current round, including the correct animal.
+    const createOptions = (correctAnimal) => {
+        const options = [correctAnimal];
+        while (options.length < 3) {
+            const option = getRandomAnimal();
+            if (!options.includes(option)) {
+                options.push(option);
+            }
         }
-        setResultText(isCorrect ? "CORRECT!" : "Wrong answear");
-        setShowResult(true);
-        setButtonsDisabled(true);
-
-        setScore({
-            ...score,
-            [players[currentPlayerIndex]]: currentScore,
-        });
-    }
-
-    // Move to the next round and change the states
-    const handleNextRound = () => {
-        setRoundsPlayed((prevRoundsPlayed) => prevRoundsPlayed + 1);
-        setCurrentPlayerIndex((prevIndex) => (prevIndex + 1) % players.length);
-
-        setShowResult(false);
-        setButtonsDisabled(false);
-    }
+        return options;
+    };
 
     // Start the game with player names.
     const startGame = (playerNames) => {
         setPlayers(playerNames);
-    }
+    };
 
-    // Restart the game.
+    // Choose a random animal from the data.
+    const getRandomAnimal = () => {
+        const animals = animalsData;
+        const randomIndex = Math.floor(Math.random() * animals.length);
+        return animals[randomIndex];
+    };
+
+    // Handle the player's guess.
+    const handleGuess = (guess) => {
+        const currentScore = gameState.score[players[currentPlayerIndex]] || 0;
+        const isCorrect = guess.toLowerCase() === currentAnimal.nameEn.toLowerCase();
+
+        setResultText(isCorrect ? "CORRECT!" : "Wrong answer");
+        setShowResult(true);
+        setButtonsDisabled(true);
+
+        setGameState((prevGameState) => ({
+            ...prevGameState,
+            score: {
+                ...prevGameState.score,
+                [players[currentPlayerIndex]]: currentScore + (isCorrect ? 1 : 0),
+            },
+        }));
+    };
+
+    // Move to the next round and change the states.
+    const handleNextRound = () => {
+        setRoundsPlayed((prevRoundsPlayed) => prevRoundsPlayed + 1);
+        setCurrentPlayerIndex((prevIndex) => (prevIndex + 1) % players.length);
+        setShowResult(false);
+        setButtonsDisabled(false);
+    };
+
+    // Handle the wildcard button click.
+    const handleWildcard = () => {
+        const currentPlayer = players[currentPlayerIndex];
+        if (!gameState.wildcardUsed[currentPlayer]) {
+            const incorrectOptions = shuffledOptions.filter(o => o.nameEn !== currentAnimal.nameEn);
+            if (incorrectOptions.length >= 2) {
+                const optionToRemove = incorrectOptions[Math.floor(Math.random() * incorrectOptions.length)];
+                setGameState((prevGameState) => ({
+                    ...prevGameState,
+                    eliminatedOption: optionToRemove,
+                    wildcardUsed: {
+                        ...prevGameState.wildcardUsed,
+                        [currentPlayer]: true,
+                    },
+                }));
+                setShuffledOptions((prevOptions) => prevOptions.filter(option => option !== optionToRemove));
+                setShowWildcard(false);
+            }
+        }
+    };
+
     const restartGame = () => {
         setCurrentPlayerIndex(0);
-        setScore({});
+        setGameState({
+            score: {},
+            wildcardUsed: {},
+            eliminatedOption: null,
+        });
         setRoundsPlayed(0);
         setCurrentAnimal(null);
         setShuffledOptions([]);
@@ -97,6 +134,7 @@ function Game() {
         maxRounds = Math.floor(Math.random() * (10 - 5 + 1) + 5);
     };
 
+    // Conditional rendering based on the number of rounds played.
     if (roundsPlayed < totalRounds) {
         return (
             <>
@@ -105,8 +143,16 @@ function Game() {
                 ) : (
                     <>
                         <div className="turn-table">
-                            <h2>Round {parseInt(roundsPlayed / 2)} of {maxRounds}</h2>
+                            <h2>Round {Math.floor(roundsPlayed / 2) + 1} of {maxRounds}</h2>
                             <h2 className="player-turn">{players[currentPlayerIndex]} turn</h2>
+                            {showWildcard && (
+                                <button
+                                    className={`button wildcard-button ${gameState.wildcardUsed[players[currentPlayerIndex]] ? 'incorrect-answer' : ''}`}
+                                    onClick={handleWildcard}
+                                    disabled={buttonsDisabled || gameState.wildcardUsed[players[currentPlayerIndex]]} >
+                                    Help?
+                                </button>
+                            )}
                         </div>
 
                         {currentAnimal && (
@@ -114,7 +160,10 @@ function Game() {
                                 <AnimalImage animal={currentAnimal} onGuess={handleGuess} />
                                 <div className="buttons">
                                     {shuffledOptions.map((option, index) => (
-                                        <button className="button option-button" key={index} onClick={() => handleGuess(option.nameEn)} disabled={buttonsDisabled}>
+                                        <button
+                                            className={`button option-button ${option === gameState.eliminatedOption ? 'eliminated' : ''}`}
+                                            key={index} onClick={() => handleGuess(option.nameEn)}
+                                            disabled={buttonsDisabled || option === gameState.eliminatedOption} >
                                             {option.nameEn}
                                         </button>
                                     ))}
@@ -129,14 +178,14 @@ function Game() {
                             </div>
                         )}
 
-                        <Scoreboard score={score} players={players} />
+                        <Scoreboard score={gameState.score} players={players} />
                     </>
                 )}
             </>
         );
     } else {
-        return <GameOver score={score} players={players} onRestart={restartGame} />;
-    };
-};
+        return <GameOver score={gameState.score} players={players} onRestart={restartGame} />;
+    }
+}
 
 export default Game;

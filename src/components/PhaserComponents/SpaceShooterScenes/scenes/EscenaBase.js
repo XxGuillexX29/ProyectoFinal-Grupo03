@@ -9,6 +9,7 @@ class EscenaBase extends Phaser.Scene {
         super(key);
         this.balasJefe;
         this.balas;
+        this.balas1;
         this.score = 0;
         this.lifes = 3;
         this.bossLife = 12;
@@ -31,6 +32,7 @@ class EscenaBase extends Phaser.Scene {
         this.load.image('enemigo', '../assetsSpaceShooter/img/Enemy.png', { frameWidth: 70, frameHeight: 70 });
         this.load.image('boss', '../assetsSpaceShooter/img/Boss.png', { frameWidth: 160, frameHeight: 220 });
         this.load.spritesheet('nave', '../assetsSpaceShooter/img/Player.png', { frameWidth: 70, frameHeight: 70 });
+        this.load.spritesheet('powerUp', '../assetsSpaceShooter/img/powerUp.png', { frameWidth: 50, frameHeight: 50 });
         this.load.spritesheet('bala', '../assetsSpaceShooter/img/shoot.png', { frameWidth: 38, frameHeight: 12 });
         this.load.spritesheet('enemigoExplosion', '../assetsSpaceShooter/img/explotion.png', { frameWidth: 64, frameHeight: 64 });
         this.load.spritesheet('hit', '../assetsSpaceShooter/img/hit.png', { frameWidth: 64, frameHeight: 64 });
@@ -49,7 +51,7 @@ class EscenaBase extends Phaser.Scene {
             this.nave.destroy();
         };
 
-        this.nave = new Nave(this, this.balas);
+        this.nave = new Nave(this, this.balas, this.balas1);
 
         const particles = this.add.particles(-10, 0, 'red', {
             speed: 100,
@@ -163,13 +165,21 @@ class EscenaBase extends Phaser.Scene {
                 balas.add(bala);
             }
 
-            setTimeout(() => {
+            this.time.delayedCall(350, () => {
                 if (shooter) {
                     this.soundPlayed = false;
                 }
-            }, 350);
-        };
-    };
+            });
+        }
+    }
+
+    enableDoubleShot() {
+        this.nave.canDoubleShot = true;
+
+        this.time.delayedCall(8000, () => {
+            this.nave.canDoubleShot = false;
+        });
+    }
 };
 
 export default EscenaBase;

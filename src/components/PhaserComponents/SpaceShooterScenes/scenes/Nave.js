@@ -1,11 +1,11 @@
 class Nave extends Phaser.Physics.Arcade.Sprite {
-    constructor(scene, balas) {
+    constructor(scene, balas, balas1) {
         super(scene, 100, 300, 'nave');
         scene.add.existing(this);
         scene.physics.add.existing(this);
 
         this.balas = balas;
-
+        this.balas1 = balas1;
         this.setCollideWorldBounds(true);
 
         if (!this.anims.get('up_move')) {
@@ -72,8 +72,13 @@ class Nave extends Phaser.Physics.Arcade.Sprite {
             };
 
             if (this.cursors.space.isDown) {
-                this.scene.shoot(this, 30, 15, this.balas);
-            };
+                if (this.scene.nave.canDoubleShot) {
+                    this.scene.shoot(this, 50, 35, this.balas1);
+                    this.scene.shoot(this, 30, 15, this.balas);
+                } else {
+                    this.scene.shoot(this, 30, 15, this.balas);
+                }
+            }
         };
     };
 };

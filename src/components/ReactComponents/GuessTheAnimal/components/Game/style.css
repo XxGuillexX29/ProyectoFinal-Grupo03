@@ -12,7 +12,7 @@
 
 .buttons {
     display: flex;
-    width: 500px;
+    width: max-content;
     margin-inline: auto;
     margin-block: .5rem;
     justify-content: space-around;
@@ -55,8 +55,14 @@
     text-align: center;
 }
 
+.wildcard-button {
+    margin-block: 1rem;
+    background-color: #1b4332 !important;
+    animation: stretch .8s infinite;
+}
+
 .correct-answer {
-    color: #95d5b2;
+    color: #0fdf6d;
     animation: correct 2s infinite;
 }
 
@@ -67,15 +73,15 @@
 
 @keyframes correct {
     0% {
-        color: #95D5B2;
+        color: #0fdf6d;
     }
 
     50% {
-        color: #52B788;
+        color: #d8f3dc;
     }
 
     100% {
-        color: #95D5B2;
+        color: #0fdf6d;
     }
 }
 

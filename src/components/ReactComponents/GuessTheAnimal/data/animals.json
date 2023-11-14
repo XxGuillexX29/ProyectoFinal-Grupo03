@@ -2,151 +2,121 @@
   {
     "nameEn": "bear",
     "nameEs": "oso",
-    "img": "assetsGuessTheAnimal/img/bear.png"
+    "img": "assetsGuessTheAnimal/img/Bear.png"
   },
   {
     "nameEn": "cat",
     "nameEs": "gato",
-    "img": "assetsGuessTheAnimal/img/cat.png"
-  },
-  {
-    "nameEn": "bunny",
-    "nameEs": "conejo",
-    "img": "assetsGuessTheAnimal/img/bunny.png"
+    "img": "assetsGuessTheAnimal/img/Cat.png"
   },
   {
     "nameEn": "lion",
     "nameEs": "león",
-    "img": "assetsGuessTheAnimal/img/lion.png"
+    "img": "assetsGuessTheAnimal/img/Lion.png"
   },
   {
     "nameEn": "dog",
     "nameEs": "perro",
-    "img": "assetsGuessTheAnimal/img/dog.png"
-  },
-  {
-    "nameEn": "cow",
-    "nameEs": "vaca",
-    "img": "assetsGuessTheAnimal/img/cow.png"
+    "img": "assetsGuessTheAnimal/img/Dog.png"
   },
   {
     "nameEn": "llama",
     "nameEs": "llama",
-    "img": "assetsGuessTheAnimal/img/llama.png"
+    "img": "assetsGuessTheAnimal/img/Llama.png"
   },
   {
-    "nameEn": "monkey",
-    "nameEs": "mono",
-    "img": "assetsGuessTheAnimal/img/monkey.png"
-  },
-  {
-    "nameEn": "mouse",
-    "nameEs": "ratón",
-    "img": "assetsGuessTheAnimal/img/mouse.png"
-  },
-  {
-    "nameEn": "sheep",
-    "nameEs": "oveja",
-    "img": "assetsGuessTheAnimal/img/sheep.png"
+    "nameEn": "orangutan",
+    "nameEs": "orangután",
+    "img": "assetsGuessTheAnimal/img/Orangutan.png"
   },
   {
     "nameEn": "snake",
     "nameEs": "serpiente",
-    "img": "assetsGuessTheAnimal/img/snake.png"
+    "img": "assetsGuessTheAnimal/img/Snake.png"
   },
   {
-    "nameEn": "owl",
-    "nameEs": "búho",
-    "img": "assetsGuessTheAnimal/img/owl.png"
-  },
-  {
-    "nameEn": "frog",
-    "nameEs": "sapo",
-    "img": "assetsGuessTheAnimal/img/frog.png"
-  },
-  {
-    "nameEn": "bull",
-    "nameEs": "toro",
-    "img": "assetsGuessTheAnimal/img/bull.png"
-  },
-  {
-    "nameEn": "chicken",
-    "nameEs": "gallina",
-    "img": "assetsGuessTheAnimal/img/chicken.png"
+    "nameEn": "toucan",
+    "nameEs": "tucán",
+    "img": "assetsGuessTheAnimal/img/Toucan.png"
   },
   {
     "nameEn": "deer",
     "nameEs": "ciervo",
-    "img": "assetsGuessTheAnimal/img/deer.png"
-  },
-  {
-    "nameEn": "donkey",
-    "nameEs": "burro",
-    "img": "assetsGuessTheAnimal/img/donkey.png"
-  },
-  {
-    "nameEn": "duck",
-    "nameEs": "pato",
-    "img": "assetsGuessTheAnimal/img/duck.png"
-  },
-  {
-    "nameEn": "fox",
-    "nameEs": "zorro",
-    "img": "assetsGuessTheAnimal/img/fox.png"
-  },
-  {
-    "nameEn": "goat",
-    "nameEs": "cabra",
-    "img": "assetsGuessTheAnimal/img/goat.png"
-  },
-  {
-    "nameEn": "goose",
-    "nameEs": "ganso",
-    "img": "assetsGuessTheAnimal/img/goose.png"
+    "img": "assetsGuessTheAnimal/img/Deer.png"
   },
   {
     "nameEn": "hog",
     "nameEs": "jabalí",
-    "img": "assetsGuessTheAnimal/img/hog.png"
+    "img": "assetsGuessTheAnimal/img/Hog.png"
   },
   {
-    "nameEn": "horse",
-    "nameEs": "caballo",
-    "img": "assetsGuessTheAnimal/img/horse.png"
-  },
-  {
-    "nameEn": "pig",
-    "nameEs": "cerdo",
-    "img": "assetsGuessTheAnimal/img/pig.png"
+    "nameEn": "zebra",
+    "nameEs": "Cebra",
+    "img": "assetsGuessTheAnimal/img/Zebra.png"
   },
   {
     "nameEn": "raccon",
     "nameEs": "mapache",
-    "img": "assetsGuessTheAnimal/img/raccon.png"
+    "img": "assetsGuessTheAnimal/img/Raccon.png"
   },
   {
     "nameEn": "ostrich",
     "nameEs": "avestruz",
-    "img": "assetsGuessTheAnimal/img/ostrich.png"
-  },
-  {
-    "nameEn": "squirrel",
-    "nameEs": "ardilla",
-    "img": "assetsGuessTheAnimal/img/squirrel.png"
+    "img": "assetsGuessTheAnimal/img/Ostrich.png"
   },
   {
     "nameEn": "tiger",
     "nameEs": "tigre",
-    "img": "assetsGuessTheAnimal/img/tiger.png"
+    "img": "assetsGuessTheAnimal/img/Tiger.png"
   },
   {
     "nameEn": "turtle",
     "nameEs": "tortuga",
-    "img": "assetsGuessTheAnimal/img/turtle.png"
+    "img": "assetsGuessTheAnimal/img/Turtle.png"
   },
   {
-    "nameEn": "wolf",
-    "nameEs": "lobo",
-    "img": "assetsGuessTheAnimal/img/wolf.png"
+    "nameEn": "meerkat",
+    "nameEs": "suricata",
+    "img": "assetsGuessTheAnimal/img/Meerkat.png"
+  },
+  {
+    "nameEn": "platypus",
+    "nameEs": "ornitorrinco",
+    "img": "assetsGuessTheAnimal/img/Platypus.png"
+  },
+  {
+    "nameEn": "eagle",
+    "nameEs": "águila",
+    "img": "assetsGuessTheAnimal/img/Eagle.png"
+  },
+  {
+    "nameEn": "koala",
+    "nameEs": "ceagleoala",
+    "img": "assetsGuessTheAnimal/img/Koala.png"
+  },
+  {
+    "nameEn": "kangaroo",
+    "nameEs": "canguro",
+    "img": "assetsGuessTheAnimal/img/Kangaroo.png"
+  },
+  {
+    "nameEn": "cheetah",
+    "nameEs": "guepardo",
+    "img": "assetsGuessTheAnimal/img/Cheetah.png"
+  },
+  {
+    "nameEn": "rhinoceros",
+    "nameEs": "rinoceronte",
+    "img": "assetsGuessTheAnimal/img/Rino.png"
+  },
+  {
+    "nameEn": "gorilla",
+    "nameEs": "gorilRinoa",
+    "img": "assetsGuessTheAnimal/img/Gorilla.png"
+  },
+  {
+    "nameEn": "panda",
+    "nameEs": "panda",
+    "img": "assetsGuessTheAnimal/img/Panda.png"
   }
 ]

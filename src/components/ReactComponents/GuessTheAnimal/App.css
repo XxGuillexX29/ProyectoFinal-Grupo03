@@ -39,6 +39,7 @@ body {
     font-size: 5rem !important;
     padding: 2rem !important;
     margin-inline: auto;
+    animation: stretch .8s infinite;
 }
 
 .start-button {
@@ -93,8 +94,7 @@ body {
     animation: breathing 5s infinite;
 }
 
-.next-round>button,
-.play-button {
+.next-round>button {
     animation: breathing .8s infinite;
 }
 
@@ -128,5 +128,29 @@ body {
 
     100% {
         transform: scale(1);
+    }
+}
+
+@keyframes stretch {
+    0% {
+        transform: scaleX(1.1);
+    }
+
+    25% {
+        transform: scaleY(1.05);
+    }
+
+
+    50% {
+        transform: scaleY(1.1);
+    }
+
+
+    75% {
+        transform: scaleY(1.05);
+    }
+
+    100% {
+        transform: scaleX(1.1);
     }
 }

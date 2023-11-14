@@ -2,12 +2,13 @@ import React, { useEffect } from 'react';
 import * as Phaser from 'phaser';
 import Menu from './scenes/Menu';
 import EscenaPrincipal from './scenes/EscenaPrincipal';
+import EscenaMedia from './scenes/EscenaMedia';
 import EscenaFinal from './scenes/EscenaFinal';
 import Pierde from './scenes/Pierde';
 import Gana from './scenes/Gana';
 
 const createScene = (Scene) => new Scene();
-const scenes = [Menu, EscenaPrincipal, EscenaFinal, Pierde, Gana];
+const scenes = [Menu, EscenaPrincipal, EscenaMedia, EscenaFinal, Pierde, Gana];
 const createScenes = () => scenes.map(createScene);
 
 const SpaceShooter = () => {

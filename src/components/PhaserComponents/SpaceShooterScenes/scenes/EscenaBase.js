@@ -1,6 +1,5 @@
 import Enemigo from "./Enemigo.js";
 import Nave from "./Nave.js";
-import Bala from "./Bala.js";
 import Boss from "./Boss.js";
 
 class EscenaBase extends Phaser.Scene {
@@ -8,8 +7,6 @@ class EscenaBase extends Phaser.Scene {
     constructor(key) {
         super(key);
         this.balasJefe;
-        this.balas;
-        this.balas1;
         this.score = 0;
         this.lifes = 3;
         this.bossLife = 12;
@@ -49,7 +46,7 @@ class EscenaBase extends Phaser.Scene {
     createPlayer() {
         if (this.nave) {
             this.nave.destroy();
-        };
+        }
 
         this.nave = new Nave(this, this.balas, this.balas1);
 
@@ -61,7 +58,7 @@ class EscenaBase extends Phaser.Scene {
         });
 
         particles.startFollow(this.nave);
-    };
+    }
 
     createBoss() {
         if (this.boss) {
@@ -152,34 +149,6 @@ class EscenaBase extends Phaser.Scene {
             };
         };
     };
-
-    shoot(shooter, posicion, velocidad, balas) {
-        const atackSound = this.sound.add('atackSound', { volume: 0.2 });
-
-        if (!this.soundPlayed) {
-            this.soundPlayed = true;
-            atackSound.play();
-
-            if (shooter) {
-                const bala = new Bala(this, shooter.x + posicion, shooter.y, velocidad);
-                balas.add(bala);
-            }
-
-            this.time.delayedCall(350, () => {
-                if (shooter) {
-                    this.soundPlayed = false;
-                }
-            });
-        }
-    }
-
-    enableDoubleShot() {
-        this.nave.canDoubleShot = true;
-
-        this.time.delayedCall(8000, () => {
-            this.nave.canDoubleShot = false;
-        });
-    }
 };
 
 export default EscenaBase;

@@ -20,12 +20,11 @@ class EscenaFinal extends EscenaBase {
         this.add.image(550, 300, 'bossBG');
 
         this.balasBoss = this.physics.add.group();
-        this.balas = this.physics.add.group();
 
         this.createPlayer();
         this.createBoss();
 
-        this.physics.add.collider(this.balas, this.boss, this.reduceLife, null, this);
+        this.physics.add.collider(this.nave.balas, this.boss, this.reduceLife, null, this);
         this.physics.add.collider(this.balasBoss, this.nave, this.handlePlayerDamage, null, this);
         this.physics.add.collider(this.nave, this.boss, this.handlePlayerDamage, null, this);
 
@@ -77,12 +76,6 @@ class EscenaFinal extends EscenaBase {
                 bala.update();
             };
         });
-
-        this.balas.children.iterate(bala => {
-            if (bala && bala.update) {
-                bala.update();
-            };
-        });
     };
 
     bossBullets() {
@@ -124,7 +117,7 @@ class EscenaFinal extends EscenaBase {
                 this.bossSoundPlayed = false;
                 this.score += 100;
                 this.scoreText.setText(`Puntos: ${this.score}`);
-                this.scene.start('Gana', { score: this.score });
+                this.scene.start('Gana', { score: this.score }, { reset: true });
             }, 1500);
         }
     }

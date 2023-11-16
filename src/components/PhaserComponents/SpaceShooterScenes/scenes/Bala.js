@@ -1,9 +1,9 @@
 class Bala extends Phaser.GameObjects.Sprite {
     constructor(scene, x, y, velocidad) {
         super(scene, x, y, 'bala');
-        this.velocidad = velocidad
-
         scene.add.existing(this);
+
+        this.velocidad = velocidad
 
         if (!this.anims.get('shooter')) {
             this.anims.create({
@@ -19,7 +19,7 @@ class Bala extends Phaser.GameObjects.Sprite {
     update() {
         this.x += this.velocidad;
         this.anims.play('shooter', true);
-        if (this.x <= 0 || this.x >= 1100) {
+        if (this.x <= 0 || this.x > this.scene.sys.canvas.width) {
             this.destroy();
         };
     };

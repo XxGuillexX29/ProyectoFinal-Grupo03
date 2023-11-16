@@ -16,14 +16,11 @@ class EscenaMedia extends EscenaBase {
         this.add.image(600, 300, 'fondo');
         this.add.image(300, 300, 'fondo2');
 
-        this.balas = this.physics.add.group();
-        this.balas1 = this.physics.add.group();
-
         this.createPlayer();
         this.createEnemies();
 
-        this.physics.add.collider(this.balas, this.enemigos, this.bulletCollision, null, this);
-        this.physics.add.collider(this.balas1, this.enemigos, this.bulletCollision, null, this);
+        this.physics.add.collider(this.nave.balas, this.enemigos, this.bulletCollision, null, this);
+        this.physics.add.collider(this.nave.balas1, this.enemigos, this.bulletCollision, null, this);
         this.physics.add.collider(this.nave, this.enemigos, this.handlePlayerDamage, null, this);
 
         this.lifeText = this.add.text(16, 16, `Vidas: ${this.lifes}`, {
@@ -34,35 +31,27 @@ class EscenaMedia extends EscenaBase {
             fontFamily: 'VT323, monospace', fontSize: '52px', fill: '#F9F9F9'
         });
 
-        this.powerUp = this.physics.add.sprite(200, 200, 'powerUp');
+        const randomX = Phaser.Math.Between(0, 500);
+        const randomY = Phaser.Math.Between(0, 550);
+        this.powerUp = this.physics.add.sprite(200, 200, 'powerUp').setScale(2);;
         this.physics.add.collider(this.powerUp, this.enemigos);
+        this.powerUp.setX(randomX);
+        this.powerUp.setY(randomY);
     };
 
     collectPowerUp(nave, powerUp) {
         powerUp.destroy();
 
         if (!this.nave.isDestroyed) {
-            this.enableDoubleShot();
-        }
-    }
+            this.nave.enableDoubleShot();
+        };
+    };
 
     update() {
         this.nave.update(this.input.keyboard.createCursorKeys());
         this.enemigos.children.iterate(enemigo => {
             if (enemigo && enemigo.update) {
                 enemigo.update();
-            };
-        });
-
-        this.balas.children.iterate(bala => {
-            if (bala && bala.update) {
-                bala.update();
-            };
-        });
-
-        this.balas1.children.iterate(bala => {
-            if (bala && bala.update) {
-                bala.update();
             };
         });
 

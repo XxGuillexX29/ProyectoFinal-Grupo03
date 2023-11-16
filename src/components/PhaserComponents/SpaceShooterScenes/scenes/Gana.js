@@ -7,8 +7,12 @@ class Gana extends EscenaBase {
     };
 
     init(data) {
-        this.score = data.score;
-    }
+        if (data) {
+            this.score = data.score || 0;
+        } else {
+            this.score = 0;
+        };
+    };
 
     preload() {
         super.preload();
@@ -44,11 +48,13 @@ class Gana extends EscenaBase {
         this.input.keyboard.on('keydown-R', () => {
             this.physics.pause();
             this.selectSound.play();
+            this.clearBullets();
             this.scene.start('Menu', { reset: true });
         });
 
         this.input.keyboard.on('keydown-ENTER', () => {
             this.selectSound.play();
+            this.clearBullets();
             this.scene.start('Menu', { reset: true });
         });
     };

@@ -5,8 +5,10 @@
     margin-inline: auto;
     padding: 1rem;
     align-items: center;
-    color: #f9f9f9;
-    background-color: #0b0b0b;
+    background-color: #0E94A0;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    opacity:0.9;
+    
 }
 
 .title {
@@ -23,5 +25,5 @@
 }
 
 .nav-list>li:hover {
-    background-color: #0b0b0b;
+    background-color: #E8E0D1;
 }

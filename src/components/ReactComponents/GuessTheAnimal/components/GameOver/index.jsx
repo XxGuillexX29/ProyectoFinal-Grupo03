@@ -4,30 +4,36 @@ import Scoreboard from "../Scoreboard";
 
 function GameOver({ score, players, onRestart }) {
 
-    function findPlayerWithHighestScore(score) {
-        let highestPlayer = null;
+    function findPlayersWithHighestScore(score) {
+        let highestPlayers = [];
         let highestScore = -1;
 
         for (const player in score) {
             if (score[player] > highestScore) {
-                highestPlayer = player;
+                highestPlayers = [player];
                 highestScore = score[player];
+            } else if (score[player] === highestScore) {
+                highestPlayers.push(player);
             }
         }
 
-        return highestPlayer;
+        return highestPlayers;
     }
 
-    const highestScoringPlayer = findPlayerWithHighestScore(score);
+    const highestScoringPlayers = findPlayersWithHighestScore(score);
 
     return (
         <section className="game-over-container">
             <h2 className="subtitle">Game Over</h2>
             <Scoreboard score={score} players={players} />
 
-            {highestScoringPlayer && (
+            {highestScoringPlayers.length === 1? (
                 <div>
-                    <p className="higher-score">Player with highest score: <span>{highestScoringPlayer}</span></p>
+                    <p className="higher-score">Player with highest score: <span>{highestScoringPlayers}</span></p>
+                </div>
+            ) : (
+                <div>
+                    <p className="tie-message">Players have tied Game!</p>
                 </div>
             )}
 

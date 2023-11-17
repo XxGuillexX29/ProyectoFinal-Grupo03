@@ -7,13 +7,8 @@ class EscenaFinal extends EscenaBase {
     };
 
     init(data) {
-        if (data) {
-            this.score = data.score || 0;
-            this.lifes = data.lifes || 0;
-        } else {
-            this.score = 0;
-            this.lifes = 0;
-        }
+        this.score = data.score;
+        this.lifes = data.lifes;
     };
 
     create() {
@@ -101,7 +96,7 @@ class EscenaFinal extends EscenaBase {
                 this.bossSoundPlayed = false;
                 this.boss.clearTint();
             });
-        }
+        };
 
         this.handleParticles();
 
@@ -115,12 +110,11 @@ class EscenaFinal extends EscenaBase {
 
             setTimeout(() => {
                 this.bossSoundPlayed = false;
-                this.score += 100;
-                this.scoreText.setText(`Puntos: ${this.score}`);
+                this.score + 100;
                 this.scene.start('Gana', { score: this.score }, { reset: true });
             }, 1500);
-        }
-    }
+        };
+    };
 
     handleParticles() {
         if (this.boss.bossLife <= 8) {
@@ -128,8 +122,8 @@ class EscenaFinal extends EscenaBase {
             if (this.boss.bossLife <= 5) {
                 this.particles2.startFollow(this.boss);
             }
-        }
-    }
+        };
+    };
 };
 
 export default EscenaFinal;

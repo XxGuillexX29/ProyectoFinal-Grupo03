@@ -10,7 +10,6 @@ class EscenaBase extends Phaser.Scene {
         this.score = 0;
         this.lifes = 3;
         this.bossLife = 12;
-        this.soundPlayed = false;
         this.hurtSoundPlayed = false;
         this.bossSoundPlayed = false;
         this.canLoseLife = true;
@@ -48,7 +47,7 @@ class EscenaBase extends Phaser.Scene {
             this.nave.destroy();
         }
 
-        this.nave = new Nave(this, this.balas, this.balas1);
+        this.nave = new Nave(this);
 
         const particles = this.add.particles(-10, 0, 'red', {
             speed: 100,

@@ -11,7 +11,7 @@ class Menu extends EscenaBase {
     };
 
     create() {
-        this.selectSound = this.sound.add('selectSound', {volume: 0.5});
+        this.selectSound = this.sound.add('selectSound', { volume: 0.5 });
 
         this.add.image(500, 300, 'winBG').setScale(2);
 

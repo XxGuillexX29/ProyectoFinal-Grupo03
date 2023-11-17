@@ -11,7 +11,7 @@ class Pierde extends EscenaBase {
     };
 
     create() {
-        this.selectSound = this.sound.add('selectSound', {volume: 0.5});
+        this.selectSound = this.sound.add('selectSound', { volume: 0.5 });
 
         this.add.image(550, 300, 'loseBG');
 

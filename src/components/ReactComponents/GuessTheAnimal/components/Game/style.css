@@ -1,24 +1,18 @@
 .turn-table {
-    position: absolute;
-    top: 3rem;
-    right: 3rem;
+    grid-column: 3/4;
     text-align: center;
+    margin-block: 1rem auto;
+}
+
+.animal-section {
+    grid-column: 2/3;
+    grid-row: 1;
 }
 
 .player-turn {
     font-size: 3rem;
     color: #d8f3dc;
-}
-
-.buttons {
-    display: flex;
-    width: max-content;
-    margin-inline: auto;
-    margin-block: .5rem;
-    justify-content: space-around;
-    border-radius: 20px;
-    border: 3px solid;
-    background-color: #52b788;
+    text-transform: uppercase;
 }
 
 .option-button {
@@ -33,6 +27,9 @@
 
 .option-button:disabled {
     background-color: #52b788;
+    height: 1rem;
+    margin-block: -1rem;
+    font-size: 0;
     color: #52b788;
     border: none;
 }
@@ -44,15 +41,17 @@
 }
 
 .next-round {
-    position: absolute;
-    top: 16rem;
-    right: 5%;
+    grid-column: 2/3;
     display: flex;
     flex-direction: column;
     font-size: 3rem;
     width: 370px;
     margin-inline: auto;
+    margin-top: -2rem;
+    background-color: #1b4332;
+    border-radius: 25px;
     text-align: center;
+    z-index: 4;
 }
 
 .wildcard-button {
@@ -63,11 +62,13 @@
 
 .correct-answer {
     color: #0fdf6d;
+    margin: 1rem;
     animation: correct 2s infinite;
 }
 
 .incorrect-answer {
     color: crimson;
+    margin: 1rem;
     animation: incorrect 1s infinite;
 }
 

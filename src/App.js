@@ -8,7 +8,7 @@ import Apps from './pages/Apps';
 import Navbar from './components/Navbar';
 import SpaceShooter from './components/PhaserComponents/SpaceShooterScenes/index.jsx';
 import PunkDude from './components/PhaserComponents/DudeScenes/index.jsx';
-import GuessTheAnimal from './components/ReactComponents/GuessTheAnimal/Start.jsx';
+import GuessTheAnimal from './components/ReactComponents/GuessTheAnimal/App.jsx';
 import SpacePad from './components/ReactComponents/SpacePad/App.jsx';
 import Comparator from './components/ReactComponents/PriceComparator/index.jsx';
 

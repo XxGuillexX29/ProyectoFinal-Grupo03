@@ -8,10 +8,10 @@ function Note({ title, description, importance, active, onToggleActive, onDelete
                 <p className='description'>{description}</p>
                 <p className='importance'>PRIORITY: <span>{importance}</span></p>
             </div>
-            
+
             <div className='note-buttons-container'>
                 <button className='active-button' onClick={onToggleActive}>
-                    {active ? 'Unactive' : 'Active'}
+                    {active ? 'Completed' : 'In process'}
                 </button>
                 <button className='delete-button' onClick={onDelete}>Delete</button>
             </div>

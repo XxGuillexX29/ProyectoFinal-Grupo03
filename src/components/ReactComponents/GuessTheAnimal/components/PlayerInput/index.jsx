@@ -30,11 +30,11 @@ function PlayerInput({ onPlayersSet }) {
 
   return (
     <section className="players-container">
-      <h2 className="subtitle">Players name:</h2>
+      <h2 className="gta-subtitle">Players name:</h2>
       <input className="player-input" type="text" placeholder="Enter Player 1's Name" value={player1} onChange={(e) => handlePlayerNameChange(e, 1)} />
       <input className="player-input" type="text" placeholder="Enter Player 2's Name" value={player2} onChange={(e) => handlePlayerNameChange(e, 2)} />
 
-      <button className="button start-button" onClick={handleStartGame} disabled={startButtonDisabled} >Start</button>
+      <button className="gta-button start-button" onClick={handleStartGame} disabled={startButtonDisabled} >Start</button>
     </section>
   );
 };

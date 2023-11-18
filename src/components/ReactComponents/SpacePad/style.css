@@ -1,14 +1,53 @@
-.App-header {
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap');
+
+.space-pad-App {
+  font-family: 'Titillium Web', sans-serif;
+  text-align: center;
+  background-color: #1b1e31;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #F9F9F9;
+  background-attachment: fixed;
+  min-height: 100vh;
+  padding-bottom: 4rem;
+  background-position: center;
+}
+
+.add-note-button {
+  font-size: 1.2rem;
+  padding: .5rem;
+  margin: .5rem;
+  text-transform: uppercase;
+  color: #F9F9F9;
+  background-color: #272942;
+  border: 3px solid #584bcf;
+  border-radius: 5px;
+  transition: ease .3s;
+  font-weight: bold;
+}
+
+.add-note-button:hover {
+  scale: 1.1;
+  border: 3px solid rgb(248, 211, 47);
+}
+
+.input:focus {
+  outline: 5px solid #584bcf;
+}
+
+.app-header {
   font-size: calc(10px + 2vmin);
   color: #F9F9F9;
 }
 
 .app-title {
-  position: absolute;
+  text-align: left;
+  position: relative;
   font-size: 3rem;
+  padding-inline: 1rem;
   color: #F9F9F9;
-  top: 1.5rem;
-  left: 2rem;
+  background-color: #584bcf;
+  isolation: isolate;
 }
 
 .subtitle {
@@ -27,20 +66,26 @@
 }
 
 .note-creator-container {
-  width: 50%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
+  width: 100%;
   gap: 3rem;
   margin-inline: auto;
-  padding-top: 8rem;
+  display: flex;
+  justify-content: center;
+  padding-block: 0 2rem;
 }
 
 .notes-container {
-  display: flex;
-  flex-wrap: wrap;
+  width: 60%;
   margin-inline: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   justify-content: center;
+}
+
+.notes-section {
+  display: flex;
+  flex-direction: column;
+  margin-inline: auto;
 }
 
 .note-inputs-container {

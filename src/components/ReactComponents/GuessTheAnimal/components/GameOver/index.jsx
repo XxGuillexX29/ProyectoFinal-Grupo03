@@ -1,6 +1,5 @@
 import React from "react";
 import "./style.css";
-import Scoreboard from "../Scoreboard";
 
 function GameOver({ score, players, onRestart }) {
 
@@ -16,14 +15,13 @@ function GameOver({ score, players, onRestart }) {
         }
 
         return highestPlayer;
-    }
+    };
 
     const highestScoringPlayer = findPlayerWithHighestScore(score);
 
     return (
         <section className="game-over-container">
-            <h2 className="subtitle">Game Over</h2>
-            <Scoreboard score={score} players={players} />
+            <h2 className="gta-subtitle">Game Over</h2>
 
             {highestScoringPlayer && (
                 <div>
@@ -31,7 +29,7 @@ function GameOver({ score, players, onRestart }) {
                 </div>
             )}
 
-            <button className="button" onClick={onRestart}>Restart</button>
+            <button className="gta-button" onClick={onRestart}>Restart</button>
         </section>
     );
 };

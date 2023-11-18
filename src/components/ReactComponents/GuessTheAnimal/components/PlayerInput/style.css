@@ -4,7 +4,8 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    margin-block: 4rem;
+    margin-block: 2rem;
+    grid-column: 1/4;
 }
 
 .player-input {
@@ -20,6 +21,7 @@
     border: 3px solid #52b788;
     border-radius: 20px;
     outline: none;
+    font-family: 'Pixelify Sans', sans-serif;
 }
 
 .player-input:focus{

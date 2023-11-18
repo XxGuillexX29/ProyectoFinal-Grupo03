@@ -9,6 +9,7 @@
     align-items: center;
     color: #d8f3dc;
     font-size: 2rem;
+    grid-column: 2/3;
 }
 
 .animal-img {

@@ -8,6 +8,7 @@
     align-items: center;
     margin-inline: auto;
     color: #d8f3dc;
+    grid-column: 1/4;
 }
 
 .game-over-container > .subtitle{

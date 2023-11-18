@@ -7,25 +7,19 @@ class EscenaFinal extends EscenaBase {
     };
 
     init(data) {
-        if (data) {
-            this.score = data.score || 0;
-            this.lifes = data.lifes || 0;
-        } else {
-            this.score = 0;
-            this.lifes = 0;
-        }
+        this.score = data.score;
+        this.lifes = data.lifes;
     };
 
     create() {
         this.add.image(550, 300, 'bossBG');
 
         this.balasBoss = this.physics.add.group();
-        this.balas = this.physics.add.group();
 
         this.createPlayer();
         this.createBoss();
 
-        this.physics.add.collider(this.balas, this.boss, this.reduceLife, null, this);
+        this.physics.add.collider(this.nave.balas, this.boss, this.reduceLife, null, this);
         this.physics.add.collider(this.balasBoss, this.nave, this.handlePlayerDamage, null, this);
         this.physics.add.collider(this.nave, this.boss, this.handlePlayerDamage, null, this);
 
@@ -77,12 +71,6 @@ class EscenaFinal extends EscenaBase {
                 bala.update();
             };
         });
-
-        this.balas.children.iterate(bala => {
-            if (bala && bala.update) {
-                bala.update();
-            };
-        });
     };
 
     bossBullets() {
@@ -108,7 +96,7 @@ class EscenaFinal extends EscenaBase {
                 this.bossSoundPlayed = false;
                 this.boss.clearTint();
             });
-        }
+        };
 
         this.handleParticles();
 
@@ -122,12 +110,11 @@ class EscenaFinal extends EscenaBase {
 
             setTimeout(() => {
                 this.bossSoundPlayed = false;
-                this.score += 100;
-                this.scoreText.setText(`Puntos: ${this.score}`);
-                this.scene.start('Gana', { score: this.score });
+                this.score + 100;
+                this.scene.start('Gana', { score: this.score }, { reset: true });
             }, 1500);
-        }
-    }
+        };
+    };
 
     handleParticles() {
         if (this.boss.bossLife <= 8) {
@@ -135,8 +122,8 @@ class EscenaFinal extends EscenaBase {
             if (this.boss.bossLife <= 5) {
                 this.particles2.startFollow(this.boss);
             }
-        }
-    }
+        };
+    };
 };
 
 export default EscenaFinal;

@@ -142,26 +142,26 @@ function Game() {
                     <PlayerInput onPlayersSet={startGame} />
                 ) : (
                     <>
-                        <div className="turn-table">
+                        <section className="turn-table">
                             <h2>Round {Math.floor(roundsPlayed / 2) + 1} of {maxRounds}</h2>
                             <h2 className="player-turn">{players[currentPlayerIndex]} turn</h2>
                             {showWildcard && (
                                 <button
-                                    className={`button wildcard-button ${gameState.wildcardUsed[players[currentPlayerIndex]] ? 'incorrect-answer' : ''}`}
+                                    className={`gta-button wildcard-button ${gameState.wildcardUsed[players[currentPlayerIndex]] ? 'incorrect-answer' : ''}`}
                                     onClick={handleWildcard}
                                     disabled={buttonsDisabled || gameState.wildcardUsed[players[currentPlayerIndex]]} >
                                     Help?
                                 </button>
                             )}
-                        </div>
+                        </section>
 
                         {currentAnimal && (
-                            <section>
+                            <section className="animal-section">
                                 <AnimalImage animal={currentAnimal} onGuess={handleGuess} />
-                                <div className="buttons">
+                                <div className="gta-buttons">
                                     {shuffledOptions.map((option, index) => (
                                         <button
-                                            className={`button option-button ${option === gameState.eliminatedOption ? 'eliminated' : ''}`}
+                                            className={`gta-button option-button ${option === gameState.eliminatedOption ? 'eliminated' : ''}`}
                                             key={index} onClick={() => handleGuess(option.nameEn)}
                                             disabled={buttonsDisabled || option === gameState.eliminatedOption} >
                                             {option.nameEn}
@@ -174,7 +174,7 @@ function Game() {
                         {showResult && (
                             <div className="next-round">
                                 <p className={resultText === "CORRECT!" ? "correct-answer" : "incorrect-answer"}>{resultText}</p>
-                                <button className="button next-animal" onClick={handleNextRound}>Next animal</button>
+                                <button className="gta-button next-animal" onClick={handleNextRound}>Next animal</button>
                             </div>
                         )}
 

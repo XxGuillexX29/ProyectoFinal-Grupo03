@@ -33,7 +33,7 @@ const SpaceShooter = () => {
     };
   }, []);
 
-  return <div id="phaser-container" className='phaser-container' />;
+  return <div id="phaser-container" className='phaser-container'> </div>;
 };
 
 export default SpaceShooter;

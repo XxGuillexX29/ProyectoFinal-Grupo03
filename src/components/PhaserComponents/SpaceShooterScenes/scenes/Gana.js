@@ -8,7 +8,7 @@ class Gana extends EscenaBase {
 
     init(data) {
         this.score = data.score;
-    }
+    };
 
     preload() {
         super.preload();
@@ -44,7 +44,7 @@ class Gana extends EscenaBase {
         this.input.keyboard.on('keydown-R', () => {
             this.physics.pause();
             this.selectSound.play();
-            this.scene.start('Menu', { reset: true });
+            this.scene.start('Escena', { reset: true });
         });
 
         this.input.keyboard.on('keydown-ENTER', () => {

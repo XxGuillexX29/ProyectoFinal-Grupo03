@@ -28,7 +28,7 @@ function App() {
   };
 
   //Make an action that active or unactive notes.
-  const markNoteAsInactive = (index) => {
+  const markNoteAsCompleted = (index) => {
     const updatedNotes = [...notes];
     updatedNotes[index].active = !updatedNotes[index].active;
     setNotes(updatedNotes);
@@ -51,10 +51,10 @@ function App() {
   });
 
   return (
-    <div className="App">
+    <div className="space-pad-App">
       <h1 className="app-title">Space Pad</h1>
 
-      <header className="App-header">
+      <header className="app-header">
         <div className='note-creator-container'>
           <section className='note-inputs-container'>
             <h2 className='subtitle'>ADD A NOTE</h2>
@@ -70,22 +70,33 @@ function App() {
             </select>
             <button className="add-note-button" onClick={saveNote}>ADD NOTE</button>
           </section>
-
-          <section className='buttons-container'>
-            <button onClick={() => setFilter('active')}>Show Active</button>
-            <button onClick={() => setFilter('inactive')}>Show Inactive</button>
-            <button onClick={() => setFilter('all')}>Show All</button>
-          </section>
         </div>
       </header>
 
       <div className="notes-container">
-        {filteredNotes.map((item, index) => (
-          <Note key={index} title={item.title} description={item.description} importance={item.importance} active={item.active}
-            onToggleActive={() => markNoteAsInactive(index)}
-            onDelete={() => deleteNote(index)}
-          />
-        ))}
+        <section className='notes-section'>
+          <h2>In process</h2>
+          {filteredNotes.map((item, index) => (
+            item.active && (
+              <Note key={index} title={item.title} description={item.description} importance={item.importance} active={item.active}
+                onToggleActive={() => markNoteAsCompleted(index)}
+                onDelete={() => deleteNote(index)}
+              />
+            )
+          ))}
+        </section>
+
+        <section className='notes-section'>
+          <h2>Completed</h2>
+          {filteredNotes.map((item, index) => (
+            !item.active && (
+              <Note key={index} title={item.title} description={item.description} importance={item.importance} active={item.active}
+                onToggleActive={() => markNoteAsCompleted(index)}
+                onDelete={() => deleteNote(index)}
+              />
+            )
+          ))}
+        </section>
       </div>
     </div>
   );

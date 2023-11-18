@@ -18,12 +18,10 @@ class Escena extends EscenaBase {
         this.lifes = 3;
         this.score = 0;
 
-        this.balas = this.physics.add.group();
-
         this.createPlayer();
         this.createEnemies();
 
-        this.physics.add.collider(this.balas, this.enemigos, this.bulletCollision, null, this);
+        this.physics.add.collider(this.nave.balas, this.enemigos, this.bulletCollision, null, this);
         this.physics.add.collider(this.nave, this.enemigos, this.handlePlayerDamage, null, this);
 
         this.lifeText = this.add.text(16, 16, `Vidas: ${this.lifes}`, {
@@ -40,12 +38,6 @@ class Escena extends EscenaBase {
         this.enemigos.children.iterate(enemigo => {
             if (enemigo && enemigo.update) {
                 enemigo.update();
-            };
-        });
-
-        this.balas.children.iterate(bala => {
-            if (bala && bala.update) {
-                bala.update();
             };
         });
 

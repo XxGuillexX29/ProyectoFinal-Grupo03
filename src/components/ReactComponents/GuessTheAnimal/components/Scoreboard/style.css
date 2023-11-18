@@ -1,13 +1,13 @@
 .score-container {
-    position: absolute;
-    top: 5rem;
-    left: 4rem;
+    grid-row: 1/2;
     font-size: 2rem;
     text-align: center;
+    margin-block: 1rem auto;
 }
 
 .score-player {
     list-style: none;
     margin: 1rem;
+    text-transform: uppercase;
     color: #d8f3dc;
 }

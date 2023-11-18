@@ -11,7 +11,7 @@ class Menu extends EscenaBase {
     };
 
     create() {
-        this.selectSound = this.sound.add('selectSound', {volume: 0.5});
+        this.selectSound = this.sound.add('selectSound', { volume: 0.5 });
 
         this.add.image(500, 300, 'winBG').setScale(2);
 
@@ -27,7 +27,7 @@ class Menu extends EscenaBase {
 
         this.input.keyboard.on('keydown-ENTER', () => {
             this.selectSound.play();
-            this.scene.start('EscenaMedia');
+            this.scene.start('Escena');
         });
     };
 };

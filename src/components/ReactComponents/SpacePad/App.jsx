@@ -57,7 +57,7 @@ function App() {
       <header className="app-header">
         <div className='note-creator-container'>
           <section className='note-inputs-container'>
-            <h2 className='subtitle'>ADD A NOTE</h2>
+            <h2 className='sp-subtitle'>ADD A NOTE</h2>
 
             <input type="text" className="input" name="title" value={note.title} onChange={handleInputChange} placeholder='Title' />
             <input type="text" className="input" name="description" value={note.description} onChange={handleInputChange} placeholder='Description' />

@@ -10,10 +10,10 @@ function Note({ title, description, importance, active, onToggleActive, onDelete
             </div>
 
             <div className='note-buttons-container'>
-                <button className='active-button' onClick={onToggleActive}>
+                <button className='active-button sp-button' onClick={onToggleActive}>
                     {active ? 'Completed' : 'In process'}
                 </button>
-                <button className='delete-button' onClick={onDelete}>Delete</button>
+                <button className='delete-button sp-button' onClick={onDelete}>Delete</button>
             </div>
         </section>
     );

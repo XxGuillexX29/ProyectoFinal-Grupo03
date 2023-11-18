@@ -1,13 +1,13 @@
 import { NavLink } from 'react-router-dom';
 import './style.css';
 
-function Card({ title, img, description, link }) {
+function Card({ title, imgSrc, description, link }) {
     return (
         <section className='card-container'>
             <h3>{title}</h3>
-            <img src={img} alt={img} />
+            <img className='img-src' src={imgSrc} alt={title} />
             <p>{description}</p>
-            <NavLink to={link}>Go to</NavLink>
+            <NavLink className={"to-the-page"} to={link}>Go to</NavLink>
         </section>
     )
 };

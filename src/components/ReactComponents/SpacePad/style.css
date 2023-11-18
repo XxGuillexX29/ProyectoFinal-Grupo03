@@ -43,15 +43,16 @@
 .app-title {
   text-align: left;
   position: relative;
-  font-size: 3rem;
+  font-size: 4rem;
   padding-inline: 1rem;
   color: #F9F9F9;
   background-color: #584bcf;
   isolation: isolate;
 }
 
-.subtitle {
+.sp-subtitle {
   text-decoration: solid underline #584bcf 6px;
+  font-size: 2rem;
   margin-block: 1rem;
 }
 
@@ -68,14 +69,15 @@
 .note-creator-container {
   width: 100%;
   gap: 3rem;
-  margin-inline: auto;
+  margin: 1rem auto;
   display: flex;
   justify-content: center;
+  align-items: center;
   padding-block: 0 2rem;
 }
 
 .notes-container {
-  width: 60%;
+  width: 70%;
   margin-inline: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -84,8 +86,13 @@
 
 .notes-section {
   display: flex;
+  width: -moz-available;
   flex-direction: column;
-  margin-inline: auto;
+  height: max-content;
+  align-items: center;
+  margin-inline: 0.5rem;
+  padding-block: 1rem;
+  background-color: #584bcf;
 }
 
 .note-inputs-container {

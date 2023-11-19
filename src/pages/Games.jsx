@@ -2,7 +2,7 @@ import Card from '../components/Card';
 
 const Games = () => {
     return (
-        <section>
+        <section className="page-container">
             <h2 className="project-subtitle">Games</h2>
             <div className='games-container'>
                 <Card title='Guess the animal!' imgSrc='./screenShots/GuessTheAnimal.png' description='A guessing game for children.' link='/guessGame' />

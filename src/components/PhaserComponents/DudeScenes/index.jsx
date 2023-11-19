@@ -11,7 +11,7 @@ const createScene = (Scene) => new Scene();
 const Escenas = [Menu, Escena1, Escena2, Escena3, Pierde, Gana];
 const iniciarEscena = () => Escenas.map(createScene);
 
-const Dude = () => {
+const PunkDude = () => {
     useEffect(() => {
         const config = {
             type: Phaser.AUTO,
@@ -42,4 +42,4 @@ const Dude = () => {
     );
 };
 
-export default Dude;
+export default PunkDude;

@@ -4,6 +4,9 @@ class Escena3 extends EscenaBase {
     constructor() {
         super("Escena3");
         this.scoreToCatch = 20;
+        this.timer = 5;
+        this.displayTimer = null;
+        this.bombGenerationEvent = null;
     };
 
     init(data) {
@@ -32,15 +35,62 @@ class Escena3 extends EscenaBase {
 
         this.physics.add.overlap(this.player, this.sandwich, this.collectStar, null, this);
         this.physics.add.collider(this.player, this.bombs, this.hitBomb, null, this);
+        this.initializeTimer();
+
+        this.displayTimer = this.add.text(250, 550, `Tiempo para la lluvia de bombas: ${this.timer}`, {
+            fontFamily: 'VT323, monospace',
+            fontSize: '48px',
+            fill: '#F4C430'
+        });
+    };
+
+    initializeTimer() {
+        this.timerEvent = this.time.addEvent({
+            delay: 1000,
+            callback: this.updateTimer,
+            callbackScope: this,
+            loop: true
+        });
+    };
+
+    updateTimer() {
+        this.timer--;
+
+        // Actualizar la visualización del temporizador
+        this.displayTimer.text = `Tiempo para la lluvia de bombas: ${Math.max(0, this.timer)}`;
+
+        if (this.timer <= 0) {
+            this.timerEvent.destroy();
+            this.generateBombs();
+        };
+    };
+
+    generateBombs() {
+        this.bombGenerationEvent = this.time.addEvent({
+            delay: 1700,
+            callback: () => {
+                const x = Phaser.Math.Between(0, this.physics.world.bounds.width);
+                const bomb = this.bombs.create(x, 16, 'bomb');
+                bomb.setBounce(1);
+                bomb.setCollideWorldBounds(true);
+                bomb.setVelocity(Phaser.Math.Between(-200, 200), 20);
+            },
+            callbackScope: this,
+            loop: true
+        });
     };
 
     update() {
         super.update();
 
-        if (this.score == 0) {
-            this.player.anims.play('new_scene', true);
+        if (this.starsCollected === this.scoreToCatch) {
             setTimeout(() => {
                 this.scene.start('Gana', { starsCollected: this.starsCollected });
+            }, 1000);
+        };
+        if (this.score == 0) {
+            setTimeout(() => {
+                this.scene.start('Gana');;
             }, 1000);
         };
     };

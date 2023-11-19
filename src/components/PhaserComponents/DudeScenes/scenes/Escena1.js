@@ -36,10 +36,7 @@ class Escena1 extends EscenaBase {
 
     update() {
         super.update();
-
         if (this.score == 0) {
-            this.player.anims.play('new_scene', true);
-
             setTimeout(() => {
                 this.scene.start('Escena2', { starsCollected: this.starsCollected });
             }, 1000);

@@ -5,8 +5,8 @@ class Bala extends Phaser.GameObjects.Sprite {
 
         this.velocidad = velocidad
 
-        if (!this.anims.get('shooter')) {
-            this.anims.create({
+        if (!scene.anims.get('shooter')) {
+            scene.anims.create({
                 key: 'shooter',
                 frames: scene.anims.generateFrameNumbers('bala', { start: 0, end: 1 }),
                 frameRate: 8,

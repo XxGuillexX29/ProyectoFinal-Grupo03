@@ -2,7 +2,7 @@ import Card from '../components/Card';
 
 const Apps = () => {
     return (
-        <section>
+        <section className="page-container">
             <h2 className="project-subtitle">Apps</h2>
             <div className='games-container'>
                 <Card title='Space Pad' imgSrc='./screenShots/SpacePad.png' description='Manage your notes in a minimalist space-like page.' link='/spacePad' />

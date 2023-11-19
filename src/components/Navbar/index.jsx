@@ -7,16 +7,16 @@ const Navbar = () => {
             <h1 className="title">GRUPO 3</h1>
             <ul className='nav-list'>
                 <li>
-                    <NavLink to={'/'} activeClassName='active-link'>Home</NavLink>
+                    <NavLink to={'/'} className='active-link'>Home</NavLink>
                 </li>
                 <li>
-                    <NavLink to={'/games'} activeClassName='active-link'>Games</NavLink>
+                    <NavLink to={'/games'} className='active-link'>Games</NavLink>
                 </li>
                 <li>
-                    <NavLink to={'/apps'} activeClassName='active-link'>Apps</NavLink>
+                    <NavLink to={'/apps'} className='active-link'>Apps</NavLink>
                 </li>
                 <li>
-                    <NavLink to={'/about'} activeClassName='active-link'>About us</NavLink>
+                    <NavLink to={'/about'} className='active-link'>About us</NavLink>
                 </li>
             </ul>
         </nav>

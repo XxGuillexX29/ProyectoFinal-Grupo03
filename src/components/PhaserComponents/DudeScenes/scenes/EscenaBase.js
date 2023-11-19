@@ -36,7 +36,7 @@ class BaseScene extends Phaser.Scene {
         this.load.spritesheet('punkTP', '../assetsDude/img/PunkTP.png', { frameWidth: 33.2, frameHeight: 48 });
         this.load.spritesheet('punkDead', '../assetsDude/img/PunkDead.png', { frameWidth: 34.3, frameHeight: 48 });
         this.load.spritesheet('sandwich', '../assetsDude/img/Sandwich.png', { frameWidth: 36, frameHeight: 36 });
-        this.load.spritesheet('dude', '../assetsDude/img/dude.png', { frameWidth: 32, frameHeight: 48 });
+        this.load.spritesheet('punkTP', '../assetsDude/img/PunkTP.png', { frameWidth: 32, frameHeight: 48 });
     };
 
     create() {

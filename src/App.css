@@ -6,15 +6,22 @@
 }
 
 #project-container {
-    min-height: 100vh;
+    min-height: 100dvh;
     height: 100%;
     width: 100%;
-    padding: 1rem 1.5rem;
+}
+
+.page-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0 1.5rem 1.5rem;
 }
 
 canvas {
-    margin: 1rem auto;
-    padding: 1rem 2rem;
+    margin: 0 auto 1rem;
+    padding: .5rem;
     border: 3px solid #0b0b0b;
     border-radius: 25px;
     background-color: #0b0b0b;
@@ -29,4 +36,69 @@ canvas {
     margin-inline: auto;
     justify-content: center;
     gap: 2rem;
+}
+
+.project-subtitle {
+    font-size: 3rem;
+    text-align: center;
+    margin-block: -5.4rem 3.5rem;
+    z-index: 3;
+    width: fit-content;
+    margin-inline: auto;
+    color: #f9f9f9;
+}
+
+.slider-container {
+    width: 100%;
+    margin: 50px auto;
+    height: auto;
+    overflow: hidden;
+}
+
+.card-wrapper {
+    display: flex;
+    padding: 0;
+    width: 250%;
+    gap: 2rem;
+    justify-content: space-evenly;
+    animation: slider 15s infinite ease-in-out;
+}
+
+.carousel-card {
+    width: 620px !important;
+}
+
+.carousel-card div {
+    width: fit-content;
+    height: 550px;
+}
+
+.carousel-card article {
+    width: 100%;
+}
+
+@keyframes slider {
+    0% {
+        margin-left: 0%;
+    }
+
+    20% {
+        margin-left: 0%;
+    }
+
+    25% {
+        margin-left: -100%;
+    }
+
+    45% {
+        margin-left: -100%;
+    }
+
+    50% {
+        margin-left: -200%;
+    }
+
+    70% {
+        margin-left: -200%;
+    }
 }

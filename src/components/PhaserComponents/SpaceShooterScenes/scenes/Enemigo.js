@@ -6,7 +6,7 @@ class Enemigo extends Phaser.Physics.Arcade.Sprite {
         scene.add.existing(this);
         scene.physics.world.enable(this);
 
-        if (!this.anims.get('enemy_idle')) {
+        if (!scene.anims.get('enemy_idle')) {
             scene.anims.create({
                 key: 'enemy_idle',
                 frames: [{ key: 'enemigo', frame: 0 }],
@@ -14,7 +14,7 @@ class Enemigo extends Phaser.Physics.Arcade.Sprite {
             });
         };
 
-        if (!this.anims.get('explotion')) {
+        if (!scene.anims.get('explotion')) {
             scene.anims.create({
                 key: 'explotion',
                 frames: scene.anims.generateFrameNumbers('enemigoExplosion', { start: 0, end: 5 }),

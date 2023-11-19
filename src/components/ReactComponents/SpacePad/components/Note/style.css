@@ -1,5 +1,5 @@
 .container {
-    width: 300px;
+    width: 350px;
     min-height: 200px;
     margin: 1rem;
     padding: 1rem;
@@ -60,6 +60,20 @@
 
 .note-buttons-container button {
     background-color: #18122B;
+}
+
+.sp-button {
+    font-size: 1.5rem;
+    border-radius: 10px;
+    border: 3px solid transparent;
+    color: rgb(248, 211, 47);
+    padding: .5rem;
+}
+
+.sp-button:hover {
+    scale: 1.1;
+    transition: ease .3s;
+    border-color: rgb(248, 211, 47);
 }
 
 .active-button {

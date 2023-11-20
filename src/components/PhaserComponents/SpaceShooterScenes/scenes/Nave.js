@@ -78,14 +78,12 @@ class Nave extends Phaser.Physics.Arcade.Sprite {
             }
 
             this.balas.children.iterate(bala => {
-                console.log("this.balas.children:", this.balas.children);
                 if (bala && bala.update) {
                     bala.update();
                 }
             });
 
             this.balas1.children.iterate(bala => {
-                console.log("this.balas1.children:", this.balas1.children);
                 if (bala && bala.update) {
                     bala.update();
                 }

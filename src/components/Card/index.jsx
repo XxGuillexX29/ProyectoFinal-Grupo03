@@ -10,7 +10,7 @@ function Card({ cardClass, title, imgSrc, description, link }) {
                     <div className='img-container'>
                         <img className='img-src' src={imgSrc} alt={title} />
                     </div>
-                    <p>{description}</p>
+                    <p className='card-description'>{description}</p>
                 </article>
             </NavLink>
         </section>

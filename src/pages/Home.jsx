@@ -1,12 +1,10 @@
 import Card from "../components/Card";
+import Hero from "../components/Hero";
 
 const Home = () => {
     return (
         <section className="page-container">
-            <h2 className="project-subtitle">Home</h2>
-            <p>Proyectos creados en el grupo 3 de la materia Fundamentos de Programación Web.</p>
-            <p>De la Tecnicatura Universitaria en Desarrollo Integral de Videojuegos.</p>
-
+            <Hero />
             <div className="slider-container">
                 <div className="slide-content">
                     <div className="card-wrapper">

@@ -1,0 +1,67 @@
+.comparator-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #d6d6d6;
+}
+
+.comparator-header {
+  font-size: calc(10px + 2vmin);
+  color: #F9F9F9;
+}
+
+.comparator-title {
+  font-size: 3rem;
+  text-align: center;
+  width: 100%;
+  padding: 1rem;
+  color: #F9F9F9;
+  background-color: #0b0b0b;
+  top: 1.5rem;
+  left: 2rem;
+}
+
+.comparator-input {
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  padding: .5rem;
+  margin: .5rem;
+  text-transform: uppercase;
+}
+
+.all-products-container {
+  padding: 1rem;
+}
+
+.prod-comparator-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-inline: auto;
+}
+
+.comparator-sub-title {
+  font-size: 2.5rem;
+  text-align: center;
+  padding: 1rem;
+  margin: .5rem;
+  background-color: #0b0b0b;
+  color: #f9f9f9;
+}
+
+.prod-inputs-container {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+}
